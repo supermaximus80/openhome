@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    This file stores bootstrap properties needed by Openfire.
+    Property names must be in the format: "prop.name.is.blah=value"
+    That will be stored as:
+        <prop>
+            <name>
+                <is>
+                    <blah>value</blah>
+                </is>
+            </name>
+        </prop>
+
+    Most properties are stored in the Openfire database. A
+	property viewer and editor is included in the admin console.
+-->
+<!-- root element, all properties must be under this element -->
+<jive>
+  <adminConsole>
+    <!-- Disable either port by setting the value to -1 -->
+    <port>-1</port>
+    <securePort>-1</securePort>
+  </adminConsole>
+  <admin>
+    <!-- Use this section to define users that will have admin privileges. Below,
+          you will find two ways to specify which users are admins. Admins will
+          have access to the admin console (only local users) and may have also access
+          to other functionalities like ad-hoc commands. -->
+    <!-- By default, only the user with the username "admin" can login
+         to the admin console. Alternatively, you can specify a comma-delimitted
+         list usernames that should be authorized to login to the admin console
+         by setting the <authorizedUsernames> field below. -->
+    <!-- <authorizedUsernames></authorizedUsernames> -->
+    <!-- Comma-delimitted list of bare JIDs. The JIDs may belong to local
+         or remote users. -->
+    <!-- <authorizedJIDs></authorizedJIDs> -->
+  </admin>
+  <locale>en</locale>
+  <!-- Network settings. By default, Openfire will bind to all network interfaces.
+      Alternatively, you can specify a specific network interfaces that the server
+      will listen on. For example, 127.0.0.1. This setting is generally only useful
+       on multi-homed servers. -->
+  <!--
+    <network>
+        <interface></interface>
+    </network>
+  <connectionProvider>
+    <className>org.jivesoftware.database.DefaultConnectionProvider</className>
+  </connectionProvider>
+  <database>
+    <defaultProvider>
+      <driver>oracle.jdbc.OracleDriver</driver>
+      <serverURL>jdbc:oracle:thin:@127.0.0.1:1521:xe</serverURL>
+      <username>xmpp</username>
+      <password>test</password>
+      <testSQL>select 1 from dual</testSQL>
+      <minConnections>5</minConnections>
+      <maxConnections>15</maxConnections>
+      <connectionTimeout>1.0</connectionTimeout>
+      <testBeforeUse>false</testBeforeUse>
+      <testAfterUse>false</testAfterUse>
+    </defaultProvider>
+  </database>
+    -->
+    <!--
+    <provider>
+    <auth>
+      <className>com.icontrol.openhomesimulatorwar.gateway.xmppserver.AuthProviderXmpp</className>
+    </auth>
+    <user>
+      <className>com.icontrol.openhomesimulatorwar.gateway.xmppserver.UserProviderXmpp</className>
+    </user>
+  </provider>
+   -->
+    <!--
+  <connectionProvider>
+    <className>org.jivesoftware.database.JNDIDataSourceProvider</className>
+  </connectionProvider>
+  <database>
+    <JNDIProvider>
+      <name>DefaultDS</name>
+        <username>xmpp</username>
+        <password>test</password>
+    </JNDIProvider>
+  </database>
+   -->
+  <java>
+    <naming>
+      <provider>
+        <url>t3://localhost:8080</url>
+      </provider>
+        <!--
+      <factory>
+        <initial>weblogic.jndi.WLInitialContextFactory</initial>
+      </factory>
+         -->
+    </naming>
+  </java>
+  <setup>true</setup>
+
+    <xmpp>
+        <server>
+            <certificate>
+                <accept-selfsigned>true</accept-selfsigned>
+            </certificate>
+        </server>
+        <client>
+            <cert>
+                <policy>disabled</policy>   <!-- disabled, wanted, needed -->
+            </cert>
+            <compression>
+                <policy>optional</policy>   <!-- disabled, optional -->
+            </compression>
+            <tls>
+                <policy>required</policy>   <!-- disabled, optional, required -->
+            </tls>
+            <idle>-1</idle>
+        </client>
+        <domain></domain>
+        <socket>
+            <ssl>
+                <active>false</active>      <!-- Do not use legacy SSL port 5223.  Set to false so standard port 5222 can handle encryption too. -->
+                <storeType>jks</storeType>
+                <!-- Need to update to absolute paths for keystore and truststore - which can be copied from resources/ -->
+                <keystore>openHomeXmppKeystore.jks</keystore>
+                <keypass>changeit</keypass>
+                <truststore>openHomeClientTruststore.jks</truststore>
+                <trustpass>changeit</trustpass>
+            </ssl>
+        </socket>
+    </xmpp>
+</jive>

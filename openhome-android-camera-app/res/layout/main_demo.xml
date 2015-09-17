@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="#DDDDDD"
+        >
+    <ImageView
+            android:id="@+id/logo_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dip"
+            android:layout_centerHorizontal="true"
+            android:src= "@drawable/logo"
+            android:layout_gravity="center"
+            />
+
+
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="OpenHome Android Camera"
+            android:textColor="#444444"
+            android:textSize="9pt"
+            android:gravity="center"
+            />
+
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:orientation="vertical"
+                  android:layout_marginTop="30dip"
+            >
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Camera Server Address:"
+            android:textColor="#444444"
+            android:textSize="9pt"
+            android:layout_marginTop="30dip"
+            />
+    <EditText
+            android:layout_width="300dip"
+            android:layout_height="50dip"
+            android:id="@+id/et_camhost_demo"
+            android:hint="Please enter manually"
+            android:text=""
+            android:textSize="9pt"
+            />
+
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="30dip"
+            android:id="@+id/tv_camera_host_info_demo"
+            android:textColor="#444444"
+            />
+
+
+
+    <Button
+            android:id="@+id/btn_start_server_demo"
+            android:layout_width="250dip"
+            android:layout_height="80dip"
+            android:text="Start Camera Server"
+            android:textSize="9pt"
+            android:gravity="center"
+            />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_error_demo"
+            android:textColor="#444444"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>

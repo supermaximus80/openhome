@@ -1,0 +1,85 @@
+<configuration scan="true">
+    <appender name="CAMERA" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/tmp/openhome_camera.log</File>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <maxIndex>20</maxIndex>
+            <FileNamePattern>/tmp/openhome_camera.log.%i</FileNamePattern>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>10MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+    <appender name="GATEWAY" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/tmp/openhome_gateway.log</File>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <maxIndex>20</maxIndex>
+            <FileNamePattern>/tmp/openhome_gateway.log.%i</FileNamePattern>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>10MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+    <appender name="XMPP" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/tmp/openhome_xmpp.log</File>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <maxIndex>20</maxIndex>
+            <FileNamePattern>/tmp/openhome_xmpp.log.%i</FileNamePattern>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>10MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+    <appender name="ALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/tmp/openhome_all.log</File>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <maxIndex>20</maxIndex>
+            <FileNamePattern>/tmp/openhome_all.log.%i</FileNamePattern>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>10MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <logger name="com.icontrol.openhomesimulator.camera" additivity="false" level="DEBUG">
+        <appender-ref ref="CAMERA"/>
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="ALL"/>
+    </logger>
+    <logger name="com.icontrol.openhomesimulator.gateway" additivity="false" level="DEBUG">
+        <appender-ref ref="GATEWAY"/>
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="ALL"/>
+    </logger>
+    <logger name="org.jivesoftware" additivity="false" level="DEBUG">
+        <appender-ref ref="XMPP"/>
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="ALL"/>
+    </logger>
+    <logger name="org.xmpp" additivity="false" level="DEBUG">
+        <appender-ref ref="XMPP"/>
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="ALL"/>
+    </logger>
+
+    <root level="debug">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="ALL"/>
+    </root>
+</configuration>

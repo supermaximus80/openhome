@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.icontrol.openhome</groupId>
+        <artifactId>openhome</artifactId>
+        <version>2.0.0-1</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <groupId>com.icontrol.openhome</groupId>
+    <artifactId>openhome-lwcsimulator-war</artifactId>
+    <version>2.0.0-1</version>
+    <name>OpenHome LWC Simulator Webapp</name>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>openhome-data</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>openhome-simulator-jar</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!--
+            locally built 3rd party jar dependencies
+        -->
+
+        <dependency>
+            <groupId>com.icontrol.xmpp</groupId>
+            <artifactId>xmpp-client-lite</artifactId>
+            <version>4.3.0-4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.icontrol.xmpp</groupId>
+            <artifactId>xmpp-core-lite</artifactId>
+            <version>4.3.0-4</version>
+        </dependency>
+
+        <!--
+            3rd party jar dependencies
+        -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk14</artifactId>
+            <version>1.43</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+        </dependency>
+
+
+    </dependencies>
+
+    <properties>
+        <!-- make sure all contents are included -->
+        <war-excludes></war-excludes>
+    </properties>
+
+</project>

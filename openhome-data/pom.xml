@@ -1,0 +1,160 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.icontrol.openhome</groupId>
+    <artifactId>openhome-data</artifactId>
+    <version>2.0.0-1</version>
+    <packaging>jar</packaging>
+    <name>OpenHome Data Model</name>
+
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>**</exclude>
+                </excludes>
+            </resource>
+        </resources>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.8.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!--schemaDirectory>../src/main/resources</schemaDirectory-->
+                    <!--
+                    <forceRegenerate>true</forceRegenerate>
+                    <args>
+                        <arg>-XtoString</arg>
+                        <arg>-Xequals</arg>
+                        <arg>-XhashCode</arg>
+                    </args>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.jvnet.jaxb2_commons</groupId>
+                            <artifactId>jaxb2-basics</artifactId>
+                            <version>${jaxb2-basics-version}</version>
+                        </plugin>
+                    </plugins>
+                    -->
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>com.google.code.maven-replacer-plugin</groupId>
+                <artifactId>replacer</artifactId>
+                <version>1.5.0</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>replace</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <filesToInclude>target/generated-sources/xjc/com/icontrol/openhome/data/**.java</filesToInclude>
+                    <replacements>
+                        <replacement>
+                            <token>import javax\.xml\.bind\.annotation\.XmlAccessType</token>
+                            <value>import com.icontrol.openhome.data.bind.XmlAccessType</value>
+                        </replacement>
+                        <replacement>
+                            <token>import javax\.xml\.bind\.annotation\.XmlAccessorType</token>
+                            <value>import com.icontrol.openhome.data.bind.XmlAccessorType</value>
+                        </replacement>
+                        <replacement>
+                            <token>import javax\.xml\.bind\.annotation\.XmlAttribute</token>
+                            <value>import com.icontrol.openhome.data.bind.XmlAttribute</value>
+                        </replacement>
+                        <replacement>
+                            <token>import javax\.xml\.bind\.annotation\.XmlAnyAttribute</token>
+                            <value>import com.icontrol.openhome.data.bind.XmlAnyAttribute</value>
+                        </replacement>
+                        <replacement>
+                            <token>import javax\.xml\.bind\.annotation\.XmlAnyElement</token>
+                            <value>import com.icontrol.openhome.data.bind.XmlAnyElement</value>
+                        </replacement>
+                        <replacement>
+                            <token>import javax\.xml\.bind\.annotation\.XmlElement</token>
+                            <value>import com.icontrol.openhome.data.bind.XmlElement</value>
+                        </replacement>
+                        <replacement>
+                            <token>import javax\.xml\.bind\.annotation\.XmlEnum</token>
+                            <value>import com.icontrol.openhome.data.bind.XmlEnum</value>
+                        </replacement>
+                        <replacement>
+                            <token>import javax\.xml\.bind\.annotation\.adapters\.XmlJavaTypeAdapter</token>
+                            <value>import com.icontrol.openhome.data.bind.XmlJavaTypeAdapter</value>
+                        </replacement>
+                        <replacement>
+                            <token>import javax\.xml\.bind\.annotation\.XmlRegistry</token>
+                            <value>import com.icontrol.openhome.data.bind.XmlRegistry</value>
+                        </replacement>
+                        <replacement>
+                            <token>import javax\.xml\.bind\.annotation\.XmlRootElement</token>
+                            <value>import com.icontrol.openhome.data.bind.XmlRootElement</value>
+                        </replacement>
+                        <replacement>
+                            <token>import javax\.xml\.bind\.annotation\.XmlSchemaType</token>
+                            <value>import com.icontrol.openhome.data.bind.XmlSchemaType</value>
+                        </replacement>
+                        <replacement>
+                            <token>import javax\.xml\.bind\.annotation\.XmlSeeAlso</token>
+                            <value>import com.icontrol.openhome.data.bind.XmlSeeAlso</value>
+                        </replacement>
+                        <replacement>
+                            <token>import javax\.xml\.bind\.annotation\.XmlType</token>
+                            <value>import com.icontrol.openhome.data.bind.XmlType</value>
+                        </replacement>
+                        <replacement>
+                            <token>import javax\.xml\.bind\.annotation\.XmlValue</token>
+                            <value>import com.icontrol.openhome.data.bind.XmlValue</value>
+                        </replacement>
+                    </replacements>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!--
+       <jaxb2-basics-version>0.6.3</jaxb2-basics-version>
+        -->
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20090211</version>
+        </dependency>
+    </dependencies>
+
+</project>

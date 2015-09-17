@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      OpenHome Bootstrap Schema
+    </xs:documentation>
+  </xs:annotation>
+
+    <!-- elements -->
+    <xs:element name="connectInfo" type="connectInfo"/>
+    <xs:element name="pendingPaidKey" type="pendingPaidKey"/>
+    <xs:element name="registryEntry" type="registryEntry"/>
+
+    <!-- ConnectInfo -->
+    <xs:complexType name="connectInfo">
+        <xs:sequence>
+            <xs:element name="session" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:attribute name="host" type="xs:token" use="required"/>
+                    <xs:attribute name="port" type="xs:integer" use="required"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="xmpp" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:attribute name="host" type="xs:token" use="required"/>
+                    <xs:attribute name="port" type="xs:integer" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <!-- PendingPaidKey -->
+    <xs:complexType name="pendingPaidKey">
+        <xs:attribute name="method" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="server"/>
+                    <xs:enumeration value="retry"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="expires" type="xs:long" use="required"/>
+        <xs:attribute name="ts" type="xs:long" use="required"/>
+        <xs:attribute name="key" type="xs:token" use="required"/>
+        <xs:attribute name="partner" type="xs:token" use="required"/>
+    </xs:complexType>
+
+    <!-- registryEntry -->
+    <xs:complexType name="registryEntry">
+        <xs:complexContent>
+            <xs:extension base="endpoint">
+                <xs:sequence>
+                    <xs:element name="siteId" type="xs:token"/>
+                    <xs:element name="gatewayUrl" type="xs:token"/>
+                </xs:sequence>
+                <xs:attribute name="serial"
+                              type="xs:token"
+                              use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- endpoint -->
+    <xs:complexType name="endpoint">
+        <xs:sequence>
+            <xs:element name="functions" type="functions"/>
+        </xs:sequence>
+        <xs:attribute name="href" type="xs:anyURI"/>
+        <xs:attribute name="embed" type="xs:boolean"/>
+    </xs:complexType>
+
+    <!-- functions -->
+    <xs:complexType name="functions">
+        <xs:sequence maxOccurs="unbounded" minOccurs="0">
+            <xs:element name="function" type="function"/>
+        </xs:sequence>
+        <xs:attribute name="count" type="xs:int" use="required"/>
+    </xs:complexType>
+
+    <!-- function -->
+    <xs:complexType name="function">
+        <xs:sequence>
+            <xs:element name="input"
+                        type="input"
+                        minOccurs="0"
+                        maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="method" type="method" use="required"/>
+        <xs:attribute name="mediaType" type="xs:token" use="optional"/>
+        <xs:attribute name="action" type="xs:anyURI" use="required"/>
+        <xs:attribute name="name" type="xs:token" use="required"/>
+        <xs:attribute name="description" type="xs:string"/>
+        <xs:attribute name="outputType" type="xs:token" use="optional"/>
+        <xs:attribute name="gates" type="xs:token" use="optional"/>
+        <xs:attribute name="adminPermission" type="xs:token" use="optional"/>
+    </xs:complexType>
+
+    <!-- input -->
+    <xs:complexType name="input">
+        <xs:sequence maxOccurs="unbounded" minOccurs="0">
+            <xs:element name="option" type="option"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:token" use="required"/>
+        <xs:attribute name="mediaType" type="xs:token" use="optional"/>
+        <xs:attribute name="type" type="xs:token" use="optional"/>
+        <xs:attribute name="value" type="xs:string" use="optional"/>
+        <xs:attribute name="description" type="xs:string"/>
+        <xs:attribute name="required" type="xs:boolean"/>
+        <xs:attribute name="min" type="xs:long"/>
+        <xs:attribute name="max" type="xs:long"/>
+        <xs:attribute name="step" type="xs:int"/>
+        <xs:attribute name="pattern" type="xs:string"/>
+        <xs:attribute name="maxLength" type="xs:int"/>
+    </xs:complexType>
+
+    <!-- option -->
+    <xs:complexType name="option">
+        <xs:attribute name="selected" type="xs:boolean" use="optional"/>
+        <xs:attribute name="value" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <!-- method -->
+    <xs:simpleType name="method">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="GET"/>
+            <xs:enumeration value="DELETE"/>
+            <xs:enumeration value="POST"/>
+            <xs:enumeration value="PUT"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

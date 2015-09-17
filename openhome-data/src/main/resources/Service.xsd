@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+-->
+  <xs:schema version="1.0"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified"
+
+        >
+
+
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      OpenHome Core Service Schema
+    </xs:documentation>
+  </xs:annotation>
+
+  <!-- ID -->
+  <xs:simpleType name="Id">
+    <xs:restriction base="xs:string">
+      <!-- TODO -->
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- StatusCode -->
+  <xs:simpleType name="StatusCode">
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="7"/>
+    </xs:restriction>
+    <!-- O=1-OK, 2-Device Busy, 3-Device Error, 4-Invalid Operation, 5-Invalid XML Format, 6-Invalid XML Content; 7-Reboot Required-->
+  </xs:simpleType>
+
+  <!-- ResponseStatus -->
+  <xs:element name="ResponseStatus" type="ResponseStatus"/>
+  <xs:complexType name="ResponseStatus">
+    <xs:sequence>
+      <xs:element name="requestURL" type="xs:anyURI" />
+      <xs:element name="statusCode" type="StatusCode" />
+      <xs:element name="statusString" type="xs:string" />
+      <xs:element name="id" type="Id" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Extensions" type="ResponseStatusExt" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="versionAttrib" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <!-- ResponseStatusExt -->
+  <xs:element name="ResponseStatusExt" type="ResponseStatusExt"/>
+  <xs:complexType name="ResponseStatusExt">
+    <xs:sequence>
+      <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+
+</xs:schema>

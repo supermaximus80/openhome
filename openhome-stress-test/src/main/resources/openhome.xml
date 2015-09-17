@@ -1,0 +1,57 @@
+<openhome>
+    <!-- Refer to Readme.rtf packaged with installation for more information -->
+
+    <!-- Values reflected here are the default values targetted for production.
+    They can be updated for troubleshooting, ie, disabling digest
+    authentication, removing TLS support, or making gateway provide same password to particular serialNo. -->
+
+    <!-- NOTE:  Per spec, digest authentication is required.
+    Basic authentication is only for one partner in the 1st release.  Subsequent for that partner requires digest.  -->
+    <authenticationSupport>
+        <!-- Authentication over HTTP: Basic vs Digest -->,
+        <camera-originated>
+            <basic>true</basic>
+            <digest>NOT-SUPPORTED</digest>
+        </camera-originated>
+        <gateway-originated>
+            <basic>true</basic>
+            <digest>NOT-SUPPORTED</digest>
+        </gateway-originated>
+    </authenticationSupport>
+
+    <!-- Serial # specified here will always get same sharedSecret.  -->
+    <!-- Also, serial # specified here will have its HTTP authentication be enforced in both ways. -->
+    <cameraSimulator>
+        <serialNo></serialNo>
+        <sharedSecret></sharedSecret>
+        <registryGatewayURL></registryGatewayURL>
+    </cameraSimulator>
+
+    <!-- Controls Gateway Simulator behaviors via these configurations -->
+    <gatewaySimulator>
+        <disabled>false</disabled>
+        <enableXmpp>true</enableXmpp>
+    </gatewaySimulator>
+
+    <!-- Controls activationKey validation during bootstrap procedures -->
+    <activationKey>
+        <enabled>false</enabled>
+        <vendorKey>sf8sfspo</vendorKey>
+    </activationKey>
+
+    <!-- Units in seconds -->
+    <timeout>
+        <response>20</response>                  <!-- Timeout to get response over HTTP or XMPP in seconds -->
+        <clientsession>1800</clientsession>        <!-- Timeout for client session handler in seconds -->
+    </timeout>
+
+    <!-- Refer to Tomcat's TLS configuration for general HTTPS settings -->
+    <!-- Refer to xmpp.xml for XMPP over TLS settings -->
+    <tls>
+        <relay>
+            <cameraPole>true</cameraPole>        <!-- If set to true, https will be used for RTSP relaying to camera over the media tunnel-->
+            <userPole>false</userPole>
+        </relay>
+    </tls>
+
+</openhome>

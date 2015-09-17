@@ -1,0 +1,10 @@
+<jxb:bindings version="2.0"
+              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <jxb:bindings schemaLocation="openhome.xsd" node="/xs:schema">
+        <jxb:schemaBindings>
+            <jxb:package name="com.icontrol.openhome.data"/>
+
+        </jxb:schemaBindings>
+    </jxb:bindings>
+</jxb:bindings>

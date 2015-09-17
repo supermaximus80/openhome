@@ -1,0 +1,40 @@
+<configuration scan="true">
+    <timestamp key="bySecond" datePattern="MMdd'T'HHmmss"/>
+    <appender name="CAMERA" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>../logs/camera-${bySecond}.log</File>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <maxIndex>20</maxIndex>
+            <FileNamePattern>../logs/camera-${bySecond}.log.%i</FileNamePattern>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>10MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <logger name="com.icontrol.openhomesimulator.camera" additivity="false" level="DEBUG">
+        <appender-ref ref="CAMERA"/>
+    </logger>
+    <logger name="com.icontrol.openhomesimulator.gateway" additivity="false" level="DEBUG">
+        <appender-ref ref="CAMERA"/>
+    </logger>
+    <logger name="org.jivesoftware" additivity="false" level="DEBUG">
+        <appender-ref ref="CAMERA"/>
+    </logger>
+    <logger name="org.xmpp" additivity="false" level="DEBUG">
+        <appender-ref ref="CAMERA"/>
+    </logger>
+    <logger name="com.icontrol.openhomestresstest" additivity="false" level="DEBUG">
+        <appender-ref ref="CAMERA"/>
+    </logger>
+    <root level="WARN">
+        <appender-ref ref="CAMERA"/>
+    </root>
+</configuration>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <display-name>OpenHome Simulator</display-name>
+    <servlet>
+        <servlet-name>CameraSimController</servlet-name>
+        <servlet-class>com.icontrol.openhomesimulator.camera.CameraSimController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CameraOpenHomeController</servlet-name>
+        <servlet-class>com.icontrol.openhomesimulator.camera.CameraOpenHomeController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GatewayManualController</servlet-name>
+        <servlet-class>com.icontrol.openhomesimulator.gateway.GatewayManualController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GatewayServiceController</servlet-name>
+        <servlet-class>com.icontrol.openhomesimulator.gateway.GatewayServiceController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckEventController</servlet-name>
+        <servlet-class>com.icontrol.openhomesimulator.gateway.GatewayCheckEventController</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DownloadFileResource</servlet-name>
+        <servlet-class>com.icontrol.openhomesimulator.gateway.DownloadFileResourceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DownloadFileResource</servlet-name>
+        <url-pattern>/download</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CameraOpenHomeController</servlet-name>
+        <url-pattern>/cam/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CameraSimController</servlet-name>
+        <url-pattern>/camera</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GatewayManualController</servlet-name>
+        <url-pattern>/gateway</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GatewayServiceController</servlet-name>
+        <url-pattern>/gw/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckEventController</servlet-name>
+        <url-pattern>/gw/upload/hasnew</url-pattern>
+    </servlet-mapping>
+    <listener>
+        <listener-class>com.icontrol.openhomesimulator.gateway.GwServletContextListener</listener-class>
+    </listener>
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <!-- Sections login-config, security-role, and security-constraint are needed for basic/digest authentication.
+    For V1.0, basic authentication will be used, but for future versions, only digest authentication will be supported.
+    To fully disable authentication for pages served by Tomcat, either remove or comment out these blocks
+    in addition to setting "authenticationSupport.gateway-originated.[basic|digest]"=false -->
+
+    <!-- MemoryRealm is a default security realm already available in Tomcat.
+    The user/password to use digest authentication against must be synced between conf/tomcat-users.xml and openhome.xml -->
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>MemoryRealm</realm-name>
+    </login-config>
+    <security-role>
+        <role-name>openhome</role-name>
+    </security-role>
+    <!--
+    <security-constraint>
+        <display-name>OpenHome Protected</display-name>
+        <web-resource-collection>
+            <web-resource-name>Web Protected Content</web-resource-name>
+            <url-pattern>/gw/upload/image/*</url-pattern>
+            <url-pattern>/gw/upload/video/*</url-pattern>
+            <url-pattern>/gw/upload/failed/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>openhome</role-name>
+        </auth-constraint>
+    </security-constraint> -->
+
+</web-app>

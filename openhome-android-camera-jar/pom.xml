@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>openhome</artifactId>
+        <groupId>com.icontrol.openhome</groupId>
+        <version>2.0.0-1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.icontrol.openhome</groupId>
+    <artifactId>openhome-android-camera-jar</artifactId>
+    <version>2.0.0-1</version>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!--
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>openhome-data</artifactId>
+            <version>1.0.0-7</version>
+        </dependency> -->
+        <dependency>
+            <groupId>com.icontrol.openhome</groupId>
+            <artifactId>openhome-data</artifactId>
+            <version>2.0.0-1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.icontrol.rest</groupId>
+            <artifactId>rest-client-core</artifactId>
+            <version>2.0.0-3-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.icontrol.rest</groupId>
+            <artifactId>rest-server-core</artifactId>
+            <version>2.0.0-3-SNAPSHOT</version>
+        </dependency>
+
+
+        <!--
+            locally built 3rd party jar dependencies
+        -->
+        <!--
+            3rd party jar dependencies
+        -->
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.5</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

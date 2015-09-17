@@ -1,0 +1,2949 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!--
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    -->
+
+    <xs:include schemaLocation="Service.xsd"/>
+
+    <!-- OpenHome XSD -->
+    <xs:annotation>
+        <xs:documentation xml:lang="en">
+            OpenHome Schema
+        </xs:documentation>
+    </xs:annotation>
+
+    <!-- Capabilities -->
+    <xs:attributeGroup name="Capabilities">
+        <xs:attribute name="min" type="xs:decimal" use="optional" />
+        <xs:attribute name="max" type="xs:decimal" use="optional" />
+        <xs:attribute name="range" use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="(([0-9])+(~([0-9])+)?)(,(([0-9])+(~([0-9])+)?))*" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="opt" use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="([^,])+(,(([^,])+))*" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="def" type="xs:string" use="optional" />
+        <xs:attribute name="reqReboot" type="xs:boolean" use="optional" />
+        <xs:attribute name="dynamic" type="xs:boolean" use="optional" />
+        <xs:attribute name="size" type="xs:integer" use="optional" />
+        <xs:anyAttribute namespace="##any" processContents="lax" />
+    </xs:attributeGroup>
+
+    <!-- ==================EXTENSIONS================== -->
+
+    <!-- AccountExt -->
+    <xs:complexType name="AccountExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- AudioExt -->
+    <xs:complexType name="AudioExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- AudioChannelExt -->
+    <xs:complexType name="AudioChannelExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- AvailableAccessPointExt -->
+    <xs:complexType name="AvailableAccessPointExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- AuthorizationInfoExt -->
+    <xs:complexType name="AuthorizationInfoExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- CommandHistoryExt -->
+    <xs:complexType name="CommandHistoryExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- ConfigTimersExt -->
+    <xs:complexType name="ConfigTimersExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- CreateMediaTunnelExt -->
+    <xs:complexType name="CreateMediaTunnelExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- CreateMediaTunnelFailureExt -->
+    <xs:complexType name="CreateMediaTunnelFailureExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- DayNightFilterExt -->
+    <xs:complexType name="DayNightFilterExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- DeviceInfoExt -->
+    <xs:complexType name="DeviceInfoExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- DeviceStatusExt -->
+    <xs:complexType name="DeviceStatusExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- DiscoveryExt -->
+    <xs:complexType name="DiscoveryExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- EventAlertExt -->
+    <xs:complexType name="EventAlertExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- EventTriggerExt -->
+    <xs:complexType name="EventTriggerExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- EventTriggerNotificationExt -->
+    <xs:complexType name="EventTriggerNotificationExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- FirmwareDownloadExt -->
+    <xs:complexType name="FirmwareDownloadExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- GainWindowExt -->
+    <xs:complexType name="GainWindowExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- IEEE802_1xExt -->
+    <xs:complexType name="IEEE802_1xExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- InputPrivacyExt -->
+    <xs:complexType name="InputPrivacyExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- IPAddressExt -->
+    <xs:complexType name="IPAddressExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- HistoryConfigurationExt -->
+    <xs:complexType name="HistoryConfigurationExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- LensExt -->
+    <xs:complexType name="LensExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- MediaFormatExt -->
+    <xs:complexType name="MediaFormatExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- MediaCaptureExt -->
+    <xs:complexType name="MediaCaptureExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- MediaTunnelExt -->
+    <xs:complexType name="MediaTunnelExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- MediaUploadFailureExt -->
+    <xs:complexType name="MediaUploadFailureExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- MulticastExt -->
+    <xs:complexType name="MulticastExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- NetworkInterfaceExt -->
+    <xs:complexType name="NetworkInterfaceExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- NonMediaEventExt -->
+    <xs:complexType name="NonMediaEventExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- NotificationHistoryExt -->
+    <xs:complexType name="NotificationHistoryExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- NotificationWrapperExt -->
+    <xs:complexType name="NotificationWrapperExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- NTPServerExt -->
+    <xs:complexType name="NTPServerExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- PTZChannelExt -->
+    <xs:complexType name="PTZChannelExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- PTZDataExt -->
+    <xs:complexType name="PTZDataExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- PTZPresetExt ??? -->
+    <xs:complexType name="PTZPresetExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- QoSExt ??? -->
+    <xs:complexType name="QoSExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- StreamingChannelExt -->
+    <xs:complexType name="StreamingChannelExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- StreamingSessionStatusExt -->
+    <xs:complexType name="StreamingSessionStatusExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- StreamingStatusExt -->
+    <xs:complexType name="StreamingStatusExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- UnicastExt -->
+    <xs:complexType name="UnicastExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- UpdateFirmwareStatusExt -->
+    <xs:complexType name="UpdateFirmwareStatusExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- UpdateSSLCertCsrExt -->
+    <xs:complexType name="UpdateSSLCertCsrExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- VideoExt -->
+    <xs:complexType name="VideoExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- VideoInputExt -->
+    <xs:complexType name="VideoInputExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- VideoInputChannelExt -->
+    <xs:complexType name="VideoInputChannelExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- WirelessExt -->
+    <xs:complexType name="WirelessExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- WirelessNetworkStatusExt -->
+    <xs:complexType name="WirelessNetworkStatusExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- WirelessSecurityExt -->
+    <xs:complexType name="WirelessSecurityExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- XMPPGatewayExt -->
+    <xs:complexType name="XMPPGatewayExt">
+        <xs:sequence>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- ==================TYPES================== -->
+
+    <!-- accessRightsType -->
+    <xs:simpleType name="AccessRightsType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="admin" />
+            <xs:enumeration value="user" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- AddressingFormat -->
+    <xs:simpleType name="AddressingFormat">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ipaddress" />
+            <xs:enumeration value="hostname" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- AddressingFormatCap -->
+    <xs:complexType name="AddressingFormatCap">
+        <xs:simpleContent>
+            <xs:extension base="AddressingFormat">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- AudioCodec -->
+    <xs:simpleType name="AudioCodec">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="G.711alaw" />
+            <xs:enumeration value="G.711ulaw" />
+            <xs:enumeration value="G.726" />
+            <xs:enumeration value="G.729" />
+            <xs:enumeration value="G.729a" />
+            <xs:enumeration value="G.729b" />
+            <xs:enumeration value="PCM" />
+            <xs:enumeration value="MP3" />
+            <xs:enumeration value="AC3" />
+            <xs:enumeration value="AAC" />
+            <xs:enumeration value="ADPCM" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- AudioCodecCap -->
+    <xs:complexType name="AudioCodecCap">
+        <xs:simpleContent>
+            <xs:extension base="AudioCodec">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- BooleanCap -->
+    <xs:complexType name="BooleanCap">
+        <xs:simpleContent>
+            <xs:extension base="xs:boolean">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- ConfigFileDataCap -->
+    <xs:complexType name="ConfigFileDataCap">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="url" type="xs:string" use="required" />
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- DateTimeCap -->
+    <xs:complexType name="DateTimeCap">
+        <xs:simpleContent>
+            <xs:extension base="xs:dateTime">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>  
+    
+    <!-- EventType -->
+    <xs:simpleType name="EventType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PirMD" />
+            <xs:enumeration value="VMD" />
+            <xs:enumeration value="SndD" />
+            <xs:enumeration value="TempD" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- EventTypeCap -->
+    <xs:complexType name="EventTypeCap">
+        <xs:simpleContent>
+            <xs:extension base="EventType">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- FloatCap -->
+    <xs:complexType name="FloatCap">
+        <xs:simpleContent>
+            <xs:extension base="xs:float">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>  
+    
+    <!-- HexBinaryCap -->
+    <xs:complexType name="HexBinaryCap">
+        <xs:simpleContent>
+            <xs:extension base="xs:hexBinary">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+
+    <!-- HTTPAuthenticationMethod -->
+    <xs:complexType name="HTTPAuthenticationMethodEnum">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="Basic" />
+                <xs:enumeration value="MD5digest" />
+                <xs:enumeration value="none" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+
+    <!-- IdCap -->
+    <xs:complexType name="IdCap">
+        <xs:simpleContent>
+            <xs:extension base="Id">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- ImageType -->
+    <xs:simpleType name="ImageType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="JPEG" />
+            <xs:enumeration value="GIF" />
+            <xs:enumeration value="PNG" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ImageTypeCap -->
+    <xs:complexType name="ImageTypeCap">
+        <xs:simpleContent>
+            <xs:extension base="ImageType">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- IntegerCap -->
+    <xs:complexType name="IntegerCap">
+        <xs:simpleContent>
+            <xs:extension base="xs:integer">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- MAC -->
+    <xs:simpleType name="MAC"  >
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(([0-9a-fA-F]{2}):){5}[0-9a-fA-F]{2}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- MACCap -->
+    <xs:complexType name="MACCap">
+        <xs:simpleContent>
+            <xs:extension base="MAC">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- OnOFFCap -->
+    <xs:simpleType name="OnOffCap">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="on" />
+            <xs:enumeration value="off" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Percentage -->
+    <xs:simpleType name="Percentage">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- PercentageCap -->
+    <xs:complexType name="PercentageCap">
+        <xs:simpleContent>
+            <xs:extension base="Percentage">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <!-- Permission ??? -->
+    <xs:simpleType name="Permission">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="deny" />
+            <xs:enumeration value="allow" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- PermissionCap ??? -->
+    <xs:complexType name="PermissionCap">
+        <xs:simpleContent>
+            <xs:extension base="Permission">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Protocol -->
+    <xs:simpleType name="Protocol">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="HTTP" />
+            <xs:enumeration value="HTTPS" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ProtocolCap -->
+    <xs:complexType name="ProtocolCap">
+        <xs:simpleContent>
+            <xs:extension base="Protocol">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Severity -->
+    <xs:simpleType name="Severity">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Emergency" />
+            <xs:enumeration value="Alert" />
+            <xs:enumeration value="Critical" />
+            <xs:enumeration value="Error" />
+            <xs:enumeration value="Warning" />
+            <xs:enumeration value="Notice" />
+            <xs:enumeration value="Informational" />
+            <xs:enumeration value="Debug" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- SeverityCap -->
+    <xs:complexType name="SeverityCap">
+        <xs:simpleContent>
+            <xs:extension base="Severity">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- StringCap -->
+    <xs:complexType name="StringCap">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- TimeCap -->
+    <xs:complexType name="TimeCap">
+        <xs:simpleContent>
+            <xs:extension base="xs:time">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>  
+    
+    <!-- UUID -->
+    <xs:simpleType name="UUID">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- UUIDCap -->
+    <xs:complexType name="UUIDCap">
+        <xs:simpleContent>
+            <xs:extension base="UUID">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Vector -->
+    <xs:simpleType name="Vector">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="-100" />
+            <xs:maxInclusive value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- VectorCap -->
+    <xs:complexType name="VectorCap">
+        <xs:simpleContent>
+            <xs:extension base="Vector">
+                <xs:attributeGroup ref="Capabilities" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <!-- ==================SCHEMA START================== -->
+    
+    <!-- API -->
+    <xs:element name="api">
+        <xs:complexType>
+			<xs:sequence>
+				<xs:element name="command" type="StringCap" minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Account -->
+    <xs:element name="Account" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="userName" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="password" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="accessRights" type="AccessRightsType" minOccurs="1" maxOccurs="1" />
+                <xs:element name="Extensions" type="AccountExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- AudioChannel -->
+    <xs:element name="AudioChannel" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="audioMode" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:restriction base="StringCap">
+                                <xs:enumeration value="listenonly" />
+                                <xs:enumeration value="talkonly" />
+                                <xs:enumeration value="talkorlisten" />
+                                <xs:enumeration value="talkandlisten" />
+                            </xs:restriction>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="microphoneEnabled" type="BooleanCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="microphoneSource" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:restriction base="StringCap">
+                                <xs:enumeration value="internal" />
+                                <xs:enumeration value="external" />
+                            </xs:restriction>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="microphoneVolume" type="PercentageCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="speakerEnabled" type="BooleanCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="speakerVolume" type="PercentageCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="AudioChannelExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- AudioChannelList -->
+    <xs:element name="AudioChannelList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="AudioChannel" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- AuthorizationInfo -->
+    <xs:element name="AuthorizationInfo" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="siteID" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="sharedSecret" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="pendingKey" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="credentialGWURL" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="Extensions" type="AuthorizationInfoExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- CommandHistory -->
+    <xs:element name="CommandHistory" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="commandURI" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="commandRxTime" type="DateTimeCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="commandExecTime" type="DateTimeCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="responseCode" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="Extensions" type="CommandHistoryExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ConfigTimers -->
+    <xs:complexType name="MediaTunnelReadyTimers">
+        <xs:sequence>
+            <!-- All wait times are in milliseconds -->
+            <xs:element name="maxMediaTunnelReadyWait" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="minWait" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="maxWait" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="stepsizeWait" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="retries" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="MediaUploadTimers">
+        <xs:sequence>
+            <!-- All wait times are in milliseconds -->
+            <xs:element name="minWait" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="maxWait" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="stepsizeWait" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="retries" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="UploadTimeout" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="XmppTimers">
+        <xs:sequence>
+            <!-- All wait times are in milliseconds -->
+            <xs:element name="minWait" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="maxWait" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="stepsizeWait" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="retries" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="ConfigTimers" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MediaTunnelReadyTimers" type="MediaTunnelReadyTimers" minOccurs="0" maxOccurs="1" />
+                <xs:element name="MediaUploadTimers" type="MediaUploadTimers" minOccurs="0" maxOccurs="1" />
+                <xs:element name="XmppTimers" type="XmppTimers" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="ConfigTimersExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ConfigFile -->
+    <xs:element name="ConfigFile" >
+        <xs:complexType>
+            <xs:sequence>
+            	<xs:element ref="ConfigTimers" minOccurs="0" maxOccurs="1" />
+            	<xs:element ref="DeviceInfo" minOccurs="0" maxOccurs="1" />
+            	<xs:element ref="Time" minOccurs="0" maxOccurs="1" />
+            	<xs:element ref="NTPServerList" minOccurs="0" maxOccurs="1" />
+            	<xs:element ref="LoggingConfig" minOccurs="0" maxOccurs="1" />
+            	<xs:element ref="HostServer" minOccurs="0" maxOccurs="1" />
+            	<xs:element ref="HistoryConfiguration" minOccurs="0" maxOccurs="1" />
+            	<xs:element ref="NetworkInterfaceList" minOccurs="0" maxOccurs="1" />
+            	<xs:element ref="AudioChannelList" minOccurs="0" maxOccurs="1" />
+            	<xs:element ref="VideoInput" minOccurs="0" maxOccurs="1" />
+            	<xs:element ref="UserList" minOccurs="0" maxOccurs="1" />
+            	<xs:element ref="StreamingChannelList" minOccurs="0" maxOccurs="1" />
+            	<xs:element ref="MotionDetectionList" minOccurs="0" maxOccurs="1" />
+            	<xs:element ref="SoundDetectionList" minOccurs="0" maxOccurs="1" />
+            	<xs:element ref="EventNotification" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- CreateMediaTunnel  -->
+    <xs:element name="CreateMediaTunnel" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sessionID" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="gatewayURL" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="failureURL" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="Extensions" type="CreateMediaTunnelExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- CreateMediaTunnelFailure  -->
+    <xs:element name="CreateMediaTunnelFailure" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="dateTime" type="DateTimeCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="eventDescription" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="CreateMediaTunnelFailureExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- CurrentTemperature -->
+    <xs:element name="CurrentTemperature" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="dateTime" type="DateTimeCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="scale" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:restriction base="StringCap">
+                                <xs:enumeration value="C" />
+                                <xs:enumeration value="F" />
+                            </xs:restriction>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="degree" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- DeviceInfo -->
+    <xs:complexType name="battery">
+        <xs:sequence>
+            <xs:element name="level" type="PercentageCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="timeRemain" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="DeviceInfo" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="deviceName" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="deviceID" type="UUIDCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="deviceDescription" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="deviceLocation" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="systemContact" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="manufacturer" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="model" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="serialNumber" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="macAddress" type="MACCap" minOccurs="1" maxOccurs="1" />
+                <!-- OpenHome firmware version is Integer based. This deviates from PSIA
+                     as they use a String. OpenHome uses a Integer so that Guardians may
+                     perform ranged validation. -->
+                <xs:element name="firmwareVersion" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="firmwareReleasedDate" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="logicVersion" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="logicReleasedDate" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="bootVersion" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="bootReleasedDate" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="rescueVersion" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="rescueReleasedDate" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <!-- OpenHome API requires hardware version number to always be provided.
+                     This is a deviation from PSIA. -->
+                <xs:element name="hardwareVersion" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="systemObjectID" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <!-- OpenHome API requires hardware version number to always be provided.
+                     This is a deviation from PSIA. -->
+                <xs:element name="apiVersion" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="battery" type="battery" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="DeviceInfoExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Discovery -->
+    <xs:element name="Discovery" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="UPnP" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Zeroconf" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="MulticastDiscovery" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                            <xs:element name="ipAddress" type="StringCap" minOccurs="0" maxOccurs="1" />
+                            <xs:element name="ipv6Address" type="StringCap" minOccurs="0" maxOccurs="1" />
+                            <xs:element name="portNo" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                            <xs:element name="ttl" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Extensions" type="DiscoveryExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- EventAlert -->
+    <xs:complexType name="AlertEventState">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="active" />
+                <xs:enumeration value="inactive" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="AlertDetectionRegionList">
+        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="DetectionRegionEntry">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="regionID" type="IdCap" minOccurs="1" maxOccurs="1" />
+                        <xs:element name="sensitivityLevel" type="PercentageCap" minOccurs="1" maxOccurs="1" />
+                        <xs:element name="detectionThreshold" type="PercentageCap" minOccurs="1" maxOccurs="1" />
+                        <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attributeGroup ref="Capabilities" />
+    </xs:complexType>
+
+    <xs:element name="EventAlert" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="dateTime" type="DateTimeCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="activePostCount" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="eventType" type="EventType" minOccurs="1" maxOccurs="1" />
+                <xs:element name="eventState" type="AlertEventState" minOccurs="1" maxOccurs="1" />
+                <xs:element name="eventDescription" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="DetectionRegionList" type="AlertDetectionRegionList" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="EventAlertExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- EventNotification -->
+    <xs:element name="EventNotification" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="EventTriggerList" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="EventNotificationMethods" minOccurs="1" maxOccurs="1" />
+                <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- EventNotificationMethods -->
+    <xs:complexType name="EventMediaFormat">
+        <xs:sequence>
+            <xs:element name="snapShotImageType" type="ImageTypeCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="videoClipFormatType" type="videoClipFormatType" minOccurs="0" maxOccurs="1" />
+            <xs:element name="preCaptureLength" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="postCaptureLength" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Extensions" type="MediaFormatExt" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="EventNonMediaFormat">
+        <xs:sequence>
+            <xs:element name="enabled" type="BooleanCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Extensions" type="NonMediaEventExt" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="EventNotificationMethods" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="HostNotificationList" minOccurs="0" maxOccurs="1" />
+                <xs:element name="MediaFormat" type="EventMediaFormat" minOccurs="0" maxOccurs="1" />
+                <xs:element name="NonMediaEvent" type="EventNonMediaFormat" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- EventTrigger -->
+    <xs:element name="EventTrigger" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="eventType" type="EventType" minOccurs="1" maxOccurs="1" />
+                <xs:element name="eventTypeInputID" type="IdCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="eventDescription" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="inputIOPortID" type="IdCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="intervalBetweenEvents" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="EventTriggerNotificationList" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="EventTriggerExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- EventTriggerList -->
+    <xs:element name="EventTriggerList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="EventTrigger" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- EventTriggerNotification -->
+    <xs:complexType name="EventNotificationMethod">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="HTTP" />
+                <xs:enumeration value="XMPP" />
+                <xs:enumeration value="POLL" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="EventNotificationRecurrence">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="beginning" />
+                <xs:enumeration value="beginningandend" />
+                <xs:enumeration value="recurring" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:element name="EventTriggerNotification" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="notificationID" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="notificationMethod" type="EventNotificationMethod" minOccurs="1" maxOccurs="1" />
+                <xs:element name="notificationRecurrence" type="EventNotificationRecurrence" minOccurs="1" maxOccurs="1" />
+                <xs:element name="notificationInterval" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="EventTriggerNotificationExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- EventTriggerNotificationList -->
+    <xs:element name="EventTriggerNotificationList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="EventTriggerNotification" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+
+    <!-- FirmwareDownload -->
+    <xs:element name="FirmwareDownload" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="url" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="fwVersion" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="md5checksum" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="Extensions" type="FirmwareDownloadExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+
+    <!-- HostNotification -->
+    <xs:element name="HostNotification" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="url" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="httpAuthenticationMethod" type="HTTPAuthenticationMethodEnum" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- HostNotificationList -->
+    <xs:element name="HostNotificationList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="HostNotification" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- IEEE802_1x -->
+    <xs:complexType name="ieee802_1x_authType">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="EAP-TLS" />
+                <xs:enumeration value="EAP-TTLS" />
+                <xs:enumeration value="EAP-PEAP" />
+                <xs:enumeration value="EAP-LEAP" />
+                <xs:enumeration value="EAP-FAST" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="ieee802_1x_TTLSAuth">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="MS-CHAP" />
+                <xs:enumeration value="MS-CHAPv2" />
+                <xs:enumeration value="PAP" />
+                <xs:enumeration value="EAP-MD5" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="ieee802_1x_EAPProto">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="EAP-POTP" />
+                <xs:enumeration value="MS-CHAPv2" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:element name="IEEE802_1x" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="authenticationProtocolType" type="ieee802_1x_authType" minOccurs="1" maxOccurs="1" />
+                <xs:element name="innerTTLSAuthenticationMethod" type="ieee802_1x_TTLSAuth" minOccurs="0" maxOccurs="1" />
+                <xs:element name="innerEAPProtocolType" type="ieee802_1x_EAPProto" minOccurs="0" maxOccurs="1" />
+                <xs:element name="validateServerEnabled" type="BooleanCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="userName" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="password" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="anonymousID" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="autoPACProvisioningEnabled" type="BooleanCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="IEEE802_1xExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- IPAddress -->
+    <xs:complexType name="ipVersion">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="v4" />
+                <xs:enumeration value="v6" />
+                <xs:enumeration value="dual" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="addressingType">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="static" />
+                <xs:enumeration value="dynamic" />
+                <xs:enumeration value="apipa" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="ipv4ipv6">
+        <xs:sequence>
+            <xs:element name="ipAddress" type="StringCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ipv6Address" type="StringCap" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="IPAddress" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ipVersion" type="ipVersion" minOccurs="1" maxOccurs="1" />
+                <xs:element name="addressingType" type="addressingType" minOccurs="1" maxOccurs="1" />
+                <xs:element name="ipAddress" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="subnetMask" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="ipv6Address" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="bitMask" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="DefaultGateway" type="ipv4ipv6" minOccurs="0" maxOccurs="1" />
+                <xs:element name="PrimaryDNS" type="ipv4ipv6" minOccurs="0" maxOccurs="1" />
+                <xs:element name="SecondaryDNS" type="ipv4ipv6" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="IPAddressExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- HistoryConfiguration -->
+    <xs:element name="HistoryConfiguration" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="commandHistorySize" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="notificationHistorySize" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="HistoryConfigurationExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- HistoryList -->
+    <xs:element name="HistoryList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="CommandHistory" />
+                <xs:element ref="NotificationHistory" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- HostServer -->
+    <xs:complexType name="HostServerHttp">
+        <xs:sequence>
+            <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="port" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="validateCerts" type="BooleanCap" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="HostServerPoll">
+        <xs:sequence>
+            <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+            <!-- Deafult Linger is in Seconds -->
+            <xs:element name="defaultLinger" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="HostServer" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="https" type="HostServerHttp" minOccurs="1" maxOccurs="1" />
+                <xs:element name="http"  type="HostServerHttp" minOccurs="1" maxOccurs="1" />
+                <xs:element name="poll"  type="HostServerPoll" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Logging -->
+    <xs:complexType name="LogTrigger">
+        <xs:sequence>
+            <xs:element name="severity" type="SeverityCap" minOccurs="1" maxOccurs="1" />
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LocalLog">
+        <xs:sequence>
+            <xs:element name="maxEntries" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="remoteLogURL">
+        <xs:sequence>
+            <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="url" type="StringCap" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="remoteLog">
+        <xs:sequence>
+            <xs:element name="xmpp" type="remoteLogURL" minOccurs="1" maxOccurs="1" />
+            <xs:element name="https" type="remoteLogURL" minOccurs="1" maxOccurs="1" />
+            <xs:element name="poll" type="remoteLogURL" minOccurs="1" maxOccurs="1">
+            </xs:element>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="LoggingConfig" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="LogTrigger" type="LogTrigger" minOccurs="0" maxOccurs="1" />
+                <xs:element name="LocalLog" type="LocalLog" minOccurs="0" maxOccurs="1" />
+                <xs:element name="remoteLog" type="remoteLog" minOccurs="0" maxOccurs="1">
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- LogEventList  -->
+    <xs:complexType name="LogEvent">
+        <xs:sequence>
+            <xs:element name="logNo" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="dateTime" type="DateTimeCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="severity" type="SeverityCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="eventID" type="IdCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="message" type="StringCap" minOccurs="1" maxOccurs="1" />
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="LogEventList" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="LogEvent" type="LogEvent" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- MediaTunnel  -->
+    <xs:complexType name="MediaTunnelSecurity">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="TLS" />
+                <xs:enumeration value="NONE" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="MediaTunnelState">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="IDLE" />
+                <xs:enumeration value="START" />
+                <xs:enumeration value="DISCONNECTING" />
+                <xs:enumeration value="SOCKET_WAITING" />
+                <xs:enumeration value="SOCKET_CONNECTED" />
+                <xs:enumeration value="TUNNEL_READY" />
+                <xs:enumeration value="RTSP_INIT" />
+                <xs:enumeration value="RTSP_READY" />
+                <xs:enumeration value="RTSP_PLAYING" />
+                <xs:enumeration value="MJPEG_STREAMING" />
+                <xs:enumeration value="PICTURE_SNAPSHOT" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:element name="MediaTunnel" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sessionID" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="transportSecurity" type="MediaTunnelSecurity" minOccurs="1" maxOccurs="1"  />
+                <xs:element name="startTime" type="DateTimeCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="elapsedTime" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="state" type="MediaTunnelState" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="MediaTunnelExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- MediaTunnelList -->
+    <xs:element name="MediaTunnelList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="MediaTunnel" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- MediaUpload -->
+    <xs:complexType name="videoClipFormatType">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="MP4" />
+                <xs:enumeration value="FLV" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:element name="MediaUpload" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="snapShotImageType" type="ImageTypeCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="videoClipFormatType" type="videoClipFormatType" minOccurs="0" maxOccurs="1" />
+                <xs:element name="preCaptureLength" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="postCaptureLength" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="videoResolutionWidth" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="videoResolutionHeight" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="blockUploadComplete" type="BooleanCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="gatewayUrl" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="eventUrl" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="StreamingSessionStatusExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- MediaUploadFailure  -->
+    <xs:element name="MediaUploadEvent" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="dateTime" type="DateTimeCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="uploadType" type="UploadType" minOccurs="1" maxOccurs="1" />
+                <xs:element name="eventDescription" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="Extensions" type="MediaUploadFailureExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- WifiConnectivityTestResult	  -->
+    <xs:element name="WifiConnectivityTestResult" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="associated" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="errorReason" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="dateTime" type="DateTimeCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="channelNo" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="ssid" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="bssid" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="rssidB" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- MotionDetection -->
+    <xs:complexType name="MotionDirection">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="left-right" />
+                <xs:enumeration value="right-left" />
+                <xs:enumeration value="up-down" />
+                <xs:enumeration value="down-up" />
+                <xs:enumeration value="any" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="MotionRegionType">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="grid" />
+                <xs:enumeration value="roi" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="MotionPIR">
+        <xs:sequence>
+            <!-- All times are based in milliseconds. -->
+            <xs:element name="PirValidTime" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="PirMotionTime" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="MotionGrid">
+        <xs:sequence>
+            <xs:element name="rowGranularity" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="columnGranularity" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="MotionROI">
+        <xs:sequence>
+            <xs:element name="minHorizontalResolution" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="minVerticalResolution" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="MotionDetection" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="inputID" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="samplingInterval" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="startTriggerTime" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="endTriggerTime" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+
+                <!-- If more than one direction is specified then these directions
+                     shall be logical OR'ed together. This provides support
+                     for diagonal movement detection. A selection of "any" will override
+                     all other choices.
+                  -->
+                <xs:element name="directionSensitivity" type="MotionDirection" minOccurs="0" maxOccurs="4" />
+                <xs:element name="regionType" type="MotionRegionType" minOccurs="0" maxOccurs="1" />
+                <xs:element name="minObjectSize" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="maxObjectSize" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Grid" type="MotionGrid" minOccurs="0" maxOccurs="1" />
+                <xs:element name="ROI" type="MotionROI" minOccurs="0" maxOccurs="1" />
+                <xs:element name="PIR" type="MotionPIR" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="MotionDetectionRegionList" minOccurs="1" maxOccurs="1" />
+                <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- RegionCoordinates -->
+    <xs:complexType name="Point">
+            <xs:sequence>
+                <xs:element name="positionX" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="positionY" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    <xs:element name="RegionCoordinates" type="Point"/>
+
+    <!-- RegionCoordinatesList -->
+	<xs:element name="RegionCoordinatesList">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="RegionCoordinates" />
+			</xs:sequence>
+            <xs:attributeGroup ref="Capabilities" />
+		</xs:complexType>
+	</xs:element>
+
+    <!-- MotionDetectionRegion -->
+    <xs:element name="MotionDetectionRegion">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="maskEnabled" type="BooleanCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="sensitivityLevel" type="PercentageCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="detectionThreshold" type="PercentageCap" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="RegionCoordinatesList" minOccurs="1" maxOccurs="1" />
+                <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- MotionDetectionRegionList -->
+    <xs:element name="MotionDetectionRegionList">
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="MotionDetectionRegion" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- MotionDetectionList -->
+    <xs:element name="MotionDetectionList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="MotionDetection" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- NetworkInterface -->
+    <xs:element name="NetworkInterface" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="IPAddress" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="Wireless" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="IEEE802_1x" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="Discovery" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="NetworkInterfaceExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- NetworkInterfaceList -->
+    <xs:element name="NetworkInterfaceList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                <xs:element ref="NetworkInterface" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- NotificationHistory -->
+    <xs:element name="NotificationHistory" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="notificationURI" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="notifyTime" type="DateTimeCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="receivedResponseTime" type="DateTimeCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="responseCode" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="xmlBody" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="Extensions" type="NotificationHistoryExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- NotificationWrapper -->
+    <xs:element name="NotificationWrapper" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="notificationURI" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="notifyTime" type="DateTimeCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="notifyBody" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="Extensions" type="NotificationWrapperExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- NTPServer -->
+    <xs:element name="NTPServer" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="addressingFormatType" type="AddressingFormatCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="hostName" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="ipAddress" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="ipv6Address" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="portNo" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="NTPServerExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- NTPServerList -->
+    <xs:element name="NTPServerList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="NTPServer" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ePTZ -->
+	<xs:element name="ePTZChannelList">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="ePTZConfiguration" />
+			</xs:sequence>
+            <xs:attributeGroup ref="Capabilities" />
+		</xs:complexType>
+	</xs:element>
+
+    <xs:complexType name="ePTZTransitionStep">
+        <xs:sequence>
+            <!-- Step in Pixels -->
+            <xs:element name="stepSize" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+
+            <!-- Speed in milliseconds -->
+            <xs:element name="stepSpeed" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="ePTZConfiguration">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="streamingChannelId" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="defaultTransitionStep" type="ePTZTransitionStep" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="ePTZPosition">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="coordinates" type="Point" minOccurs="1" maxOccurs="1" />
+
+                <!-- If no transition step is provided then it is assumed that the
+                     default transition steps will be used. -->
+                <xs:element name="transitionStep" type="ePTZTransitionStep" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ePTZZoom">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+
+                <!-- Magnitude: 1.0 or greater -->
+                <xs:element name="magnitude" type="FloatCap" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- PTZChannel -->
+    <xs:element name="PTZChannel" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="videoInputID" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="panMaxSpeed" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="tiltMaxSpeed" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="autoPatrolSpeed" type="PercentageCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="controlProtocol" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="defaultPresetID" type="IdCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="PTZChannelExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- PTZChannelList -->
+    <xs:element name="PTZChannelList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="PTZChannel" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- PTZData -->
+    <xs:complexType name="PTZElevation">
+        <xs:simpleContent>
+            <xs:restriction base="IntegerCap">
+                <xs:minInclusive value="-90" />
+                <xs:maxInclusive value="90" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="PTZAzimuth">
+        <xs:simpleContent>
+            <xs:restriction base="IntegerCap">
+                <xs:minInclusive value="0" />
+                <xs:maxInclusive value="360" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:element name="PTZData" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="pan" type="VectorCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="tilt" type="VectorCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="zoom" type="VectorCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Momentary" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="duration" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Relative" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="positionX" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                            <xs:element name="positionY" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                            <xs:element name="relativeZoom" type="VectorCap" minOccurs="0" maxOccurs="1" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Absolute" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="elevation" type="PTZElevation" minOccurs="0" maxOccurs="1" />
+                            <xs:element name="azimuth" type="PTZAzimuth" minOccurs="0" maxOccurs="1" />
+                            <xs:element name="absoluteZoom" type="PercentageCap" minOccurs="0" maxOccurs="1" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Digital" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="positionX" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                            <xs:element name="positionY" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                            <xs:element name="digitalZoomLevel" type="PercentageCap" minOccurs="0" maxOccurs="1" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Extensions" type="PTZDataExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- PTZStatus -->
+    <xs:element name="PTZStatus" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Absolute">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="elevation" type="PTZElevation" minOccurs="0" maxOccurs="1" />
+                            <xs:element name="azimuth" type="PTZAzimuth" minOccurs="0" maxOccurs="1" />
+                            <xs:element name="absoluteZoom" type="PercentageCap" minOccurs="0" maxOccurs="1" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- SoundDetection -->
+    <xs:complexType name="TriggerType">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="high" />
+                <xs:enumeration value="low" />
+                <xs:enumeration value="rising" />
+                <xs:enumeration value="falling" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:element name="SoundDetection" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="triggeringType" type="TriggerType" minOccurs="1" maxOccurs="1" />
+                <xs:element name="detectionThreshold" type="PercentageCap" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- SoundDetectionList -->
+    <xs:element name="SoundDetectionList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="SoundDetection" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- TemperatureDetection -->
+    <xs:element name="TemperatureDetection" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="triggeringType" type="TriggerType" minOccurs="1" maxOccurs="1" />
+                <xs:element name="detectionThreshold" type="PercentageCap" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- TemperatureDetectionList -->
+    <xs:element name="TemperatureDetectionList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="SoundDetection" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Time -->
+    <xs:complexType name="timeMode">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="NTP" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:element name="Time" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="timeMode" type="timeMode" minOccurs="1" maxOccurs="1" />
+                <xs:element name="localTime" type="DateTimeCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="utcTime" type="DateTimeCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="timeZone" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- MotionDetectionCapabilities -->
+    <xs:complexType name="MotionTypeEnum">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="roi" />
+                <xs:enumeration value="grid" />
+                <xs:enumeration value="pir" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="GridCapabilites">
+        <xs:sequence>
+            <xs:element name="rowGranularity" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="columnGranularity" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ROICapabilities">
+        <xs:sequence>
+            <xs:element name="maxRegions" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="minHorizontalResolution" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="maxHorizontalResolution" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="MotionDetectionCapabilities" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="samplingInterval" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="motionTypes" type="MotionTypeEnum" minOccurs="0" maxOccurs="1" />
+                <xs:element name="minObjectSize" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="maxObjectSize" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Grid" type="GridCapabilites" minOccurs="0" maxOccurs="1" />
+                <xs:element name="ROI" type="ROICapabilities" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- StreamingCapabilities -->
+    <xs:complexType name="snapShotImageTypeEnum">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="JPEG" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="VideoCapabilites">
+        <xs:sequence>
+            <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="videoInputChannelID" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="videoCodecType" type="StreamVideoCodec" minOccurs="1" maxOccurs="1" />
+            <xs:element name="videoResolutionWidth" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="videoResolutionHeight" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="videoQualityControlType" type="videoQualityControlTypeEnum" minOccurs="1" maxOccurs="1" />
+            <xs:element name="constantBitRate" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="maxFrameRate" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="snapShotImageType" type="snapShotImageTypeEnum" minOccurs="1" maxOccurs="1" />
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AudioCapabilities">
+        <xs:sequence>
+            <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="audioInputChannelID" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="audioCompressionType" type="AudioCodecCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="audioBitRate" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="MediaCaptureCapabilities">
+        <xs:sequence>
+            <xs:element name="preCaptureLength" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="postCaptureLength" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="StreamingCapabilities" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="channelName" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="enabled" type="BooleanCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="ControlProtocolList" type="StreamControlProtoList" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Video" type="VideoCapabilites" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Audio" type="AudioCapabilities" minOccurs="0" maxOccurs="1" />
+                <xs:element name="MediaCapture" type="MediaCaptureCapabilities" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+    <!-- StreamingChannel -->
+    <xs:complexType name="StreamControlProtoList">
+        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="ControlProtocol">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="streamingTransport" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:restriction base="StringCap">
+                                        <xs:enumeration value="HTTP" />
+                                        <xs:enumeration value="RTSP" />
+                                        <xs:enumeration value="HTTP,RTSP" />
+                                    </xs:restriction>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attributeGroup ref="Capabilities" />
+    </xs:complexType>
+
+    <xs:complexType name="StreamUnicast">
+        <xs:sequence>
+            <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="interfaceID" type="StringCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="rtpTransportType" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:restriction base="StringCap">
+                            <xs:enumeration value="RTP/UDP" />
+                            <xs:enumeration value="RTP/TCP" />
+                            <xs:enumeration value="RTP/UDP,RTP/TCP" />
+                        </xs:restriction>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Extensions" type="UnicastExt" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="StreamMulticast">
+        <xs:sequence>
+            <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="userTriggerThreshold" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="destIPAddress" type="StringCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="videoDestPortNo" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="audioDestPortNo" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="destIPv6Address" type="StringCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ttl" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Extensions" type="MulticastExt" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="StreamTransport">
+        <xs:sequence>
+            <xs:element name="rtspPortNo" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="maxPacketSize" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="audioPacketLength" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="audioInboundPacketLength" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="audioInboundPortNo" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="videoSourcePortNo" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="audioSourcePortNo" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ControlProtocolList" type="StreamControlProtoList" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Unicast" type="StreamUnicast" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Multicast" type="StreamMulticast" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Security" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                        <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="StreamVideoCodec">
+        <xs:sequence>
+            <xs:element name="h.264" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="profile" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:restriction base="StringCap">
+                                        <xs:enumeration value="baseline" />
+                                        <xs:enumeration value="main" />
+                                        <xs:enumeration value="high" />
+                                        <xs:enumeration value="extended" />
+                                    </xs:restriction>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="level" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:restriction base="StringCap">
+                                        <xs:enumeration value="1" />
+                                        <xs:enumeration value="1b" />
+                                        <xs:enumeration value="1.1" />
+                                        <xs:enumeration value="1.2" />
+                                        <xs:enumeration value="1.3" />
+                                        <xs:enumeration value="2" />
+                                        <xs:enumeration value="2.1" />
+                                        <xs:enumeration value="2.2" />
+                                        <xs:enumeration value="3" />
+                                        <xs:enumeration value="3.1" />
+                                        <xs:enumeration value="3.2" />
+                                        <xs:enumeration value="4" />
+                                        <xs:enumeration value="4.1" />
+                                        <xs:enumeration value="4.2" />
+                                        <xs:enumeration value="5" />
+                                        <xs:enumeration value="5.1" />
+                                        <xs:enumeration value="5.2" />
+                                    </xs:restriction>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <!-- We will only support Simple and Advanced profiles form MPEG4 (Part 2). -->
+            <!-- Neither of these profiles supports levels. -->
+            <xs:element name="mpeg4" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="profile" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:restriction base="StringCap">
+                                        <xs:enumeration value="simple" />
+                                        <xs:enumeration value="advanced" />
+                                    </xs:restriction>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="mjpeg" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="videoQualityControlTypeEnum">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="CBR" />
+                <xs:enumeration value="VBR" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="StreamVideo">
+        <xs:sequence>
+            <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="videoInputChannelID" type="IdCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="videoCodecType" type="StreamVideoCodec" minOccurs="1" maxOccurs="1" />
+            <xs:element name="videoScanType" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:restriction base="StringCap">
+                            <xs:enumeration value="progressive" />
+                            <xs:enumeration value="interlaced" />
+                        </xs:restriction>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="videoResolutionWidth" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="videoResolutionHeight" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="videoPositionX" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="videoPositionY" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="videoQualityControlType" type="videoQualityControlTypeEnum" minOccurs="0" maxOccurs="1" />
+            <xs:element name="constantBitRate" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="fixedQuality" type="PercentageCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="vbrUpperCap" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="vbrLowerCap" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="maxFrameRate" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="keyFrameInterval" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="rotationDegree" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:restriction base="IntegerCap">
+                            <xs:minInclusive value="0"></xs:minInclusive>
+                            <xs:maxInclusive value="360"></xs:maxInclusive>
+                        </xs:restriction>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="mirrorEnabled" type="BooleanCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="snapShotImageType" type="ImageTypeCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Extensions" type="VideoExt" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="StreamAudio">
+        <xs:sequence>
+            <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="audioInputChannelID" type="IdCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="audioCompressionType" type="AudioCodec" minOccurs="1" maxOccurs="1" />
+            <xs:element name="audioInboundCompressionType" type="AudioCodec" minOccurs="0" maxOccurs="1" />
+            <xs:element name="audioBitRate" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="audioSamplingRate" type="FloatCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="audioResolution" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Extensions" type="AudioExt" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="StreamMediaCapture">
+        <xs:sequence>
+            <xs:element name="preCaptureLength" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="postCaptureLength" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Extensions" type="MediaCaptureExt" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="StreamingChannel" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="channelName" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="Transport" type="StreamTransport" minOccurs="1" maxOccurs="1" />
+                <xs:element name="Video" type="StreamVideo" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Audio" type="StreamAudio" minOccurs="0" maxOccurs="1" />
+                <xs:element name="MediaCapture" type="StreamMediaCapture" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="StreamingChannelExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- StreamingChannelList -->
+    <xs:element name="StreamingChannelList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="StreamingChannel" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- StreamingSessionStatus -->
+    <xs:element name="StreamingSessionStatus" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="clientAddress" type="ipv4ipv6" minOccurs="1" maxOccurs="1" />
+                <xs:element name="clientUserName" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="startDateTime" type="DateTimeCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="elapsedTime" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="bandwidth" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="txPackets" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="rxPackets" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="StreamingSessionStatusExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- StreamingSessionStatusList -->
+    <xs:element name="StreamingSessionStatusList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="StreamingSessionStatus" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- StreamingStatus -->
+    <xs:element name="StreamingStatus" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="totalStreamingSessions" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="StreamingSessionStatusList" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Extensions" type="StreamingStatusExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- UpdateFirmwareStatus  -->
+    <xs:element name="UpdateFirmwareStatus" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="updateSuccess" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="updateTime" type="DateTimeCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="errorReason" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="url" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="fwVersion" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="downloadPercentage" type="PercentageCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="checksumCheckSuccess" type="BooleanCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="UpdateFirmwareStatusExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- UpdateSSLCertCommand  -->
+    <xs:element name="UpdateSSLServerCert" >
+                <xs:complexType>
+                    <xs:sequence>
+                <xs:element name="cn" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="csr" type="StringCap" minOccurs="0" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+    <xs:element name="SSLServerSignedCert" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="signedCert" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="publicKey" type="StringCap" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+    </xs:element>
+
+    <xs:element name="UpdateSSLCertCommand" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="clientCert" minOccurs="0" maxOccurs="1" >
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="url" type="StringCap" minOccurs="1" maxOccurs="1" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+
+    <!-- UploadType -->
+    <xs:simpleType name="UploadType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PICTURE" />
+            <xs:enumeration value="VIDEOCLIP" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- UserList -->
+    <xs:element name="UserList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="Account" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- VideoInput -->
+    <xs:element name="VideoInput" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="VideoInputChannelList" />
+                <xs:element name="Extensions" type="VideoInputExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- VideoInputChannel -->
+    <xs:complexType name="powerLineFrequencyMode">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="50hz" />
+                <xs:enumeration value="60hz" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="whiteBalanceMode">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="manual" />
+                <xs:enumeration value="auto" />
+                <xs:enumeration value="indoor/incandescent" />
+                <xs:enumeration value="fluorescent/white" />
+                <xs:enumeration value="fluorescent/yellow" />
+                <xs:enumeration value="outdoor" />
+                <xs:enumeration value="black&amp;white" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="exposureMode">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="manual" />
+                <xs:enumeration value="auto" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="VideoExposure">
+        <xs:sequence>
+            <xs:element name="exposureTarget" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="exposureAutoMin" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="exposureAutoMax" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="VideoGainWindow">
+        <xs:sequence>
+            <xs:element ref="RegionCoordinatesList" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Extensions" type="GainWindowExt" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="VideoLensList">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Lens">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="lensModuleName" type="StringCap" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="irisMode" minOccurs="0" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:restriction base="StringCap">
+                                        <xs:enumeration value="manual" />
+                                        <xs:enumeration value="auto" />
+                                        <xs:enumeration value="override" />
+                                    </xs:restriction>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="focusMode" minOccurs="0" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:restriction base="StringCap">
+                                        <xs:enumeration value="manual" />
+                                        <xs:enumeration value="auto" />
+                                        <xs:enumeration value="autobackfocus" />
+                                        <xs:enumeration value="override" />
+                                    </xs:restriction>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Extensions" type="LensExt" minOccurs="0" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attributeGroup ref="Capabilities" />
+    </xs:complexType>
+
+    <xs:complexType name="VideoDayNightFilter">
+        <xs:sequence>
+            <xs:element name="dayNightFilterType" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:restriction base="StringCap">
+                            <xs:enumeration value="day" />
+                            <xs:enumeration value="night" />
+                            <xs:enumeration value="auto" />
+                        </xs:restriction>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="switchScheduleEnabled" type="BooleanCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="beginTime" type="TimeCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="endTime" type="TimeCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="illuminationSwitchOver" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                        <xs:element name="threshold" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Extensions" type="DayNightFilterExt" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="VideoRotationDegree">
+        <xs:simpleContent>
+            <xs:restriction base="IntegerCap">
+                <xs:minInclusive value="0"></xs:minInclusive>
+                <xs:maxInclusive value="360"></xs:maxInclusive>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:element name="VideoInputChannel" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="inputPort" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="powerLineFrequencyMode" type="powerLineFrequencyMode" minOccurs="0" maxOccurs="1" />
+                <xs:element name="whiteBalanceMode" type="whiteBalanceMode" minOccurs="0" maxOccurs="1" />
+                <xs:element name="whiteBalanceLevel" type="PercentageCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="exposureMode" type="exposureMode" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Exposure" type="VideoExposure" minOccurs="0" maxOccurs="1" />
+                <xs:element name="GainWindow" type="VideoGainWindow" minOccurs="0" maxOccurs="1" />
+                <xs:element name="gainLevel" type="PercentageCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="brightnessLevel" type="PercentageCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="contrastLevel" type="PercentageCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="sharpnessLevel" type="PercentageCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="saturationLevel" type="PercentageCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="hueLevel" type="PercentageCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="gammaCorrectionEnabled" type="BooleanCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="gammaCorrectionLevel" type="PercentageCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="WDREnabled" type="BooleanCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="WDRLevel" type="PercentageCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="LensList" type="VideoLensList" minOccurs="0" maxOccurs="1" />
+                <xs:element name="DayNightFilter" type="VideoDayNightFilter" minOccurs="0" maxOccurs="1" />
+                <xs:element name="shutterspeed" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="rotationDegree" type="VideoRotationDegree" minOccurs="0" maxOccurs="1" />
+                <xs:element name="mirrorEnabled" type="BooleanCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="VideoInputChannelExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- VideoInputChannelList -->
+    <xs:element name="VideoInputChannelList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="VideoInputChannel" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- VideoInputChannelStatus -->
+    <xs:element name="VideoInputChannelStatus" >
+        <xs:complexType>
+            <xs:sequence>
+                <!-- ID of the video input channel -->
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+
+                <!-- True if video signal is currently online, or connected. -->
+                <xs:element name="signalDetected" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- VideoInputChannelStatusList -->
+    <xs:element name="VideoInputChannelStatusList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="VideoInputChannelStatus" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Wireless -->
+    <xs:complexType name="wirelessNetworkMode">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="infrastructure" />
+                <xs:enumeration value="adhoc" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="WifiChannel">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="1" />
+                <xs:enumeration value="2" />
+                <xs:enumeration value="3" />
+                <xs:enumeration value="4" />
+                <xs:enumeration value="5" />
+                <xs:enumeration value="6" />
+                <xs:enumeration value="7" />
+                <xs:enumeration value="8" />
+                <xs:enumeration value="9" />
+                <xs:enumeration value="10" />
+                <xs:enumeration value="11" />
+                <xs:enumeration value="12" />
+                <xs:enumeration value="13" />
+                <xs:enumeration value="14" />
+                <xs:enumeration value="auto" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="WifiSecurityMode">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="disable" />
+                <xs:enumeration value="WEP" />
+                <xs:enumeration value="WPA-personal" />
+                <xs:enumeration value="WPA2-personal" />
+                <xs:enumeration value="WPA-RADIUS" />
+                <xs:enumeration value="WPA-enterprise" />
+                <xs:enumeration value="WPA2-enterprise" />
+                <xs:enumeration value="WPA/WPA2-personal" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="WifiSecurityWEP">
+        <xs:sequence>
+            <xs:element name="authenticationType" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:restriction base="StringCap">
+                            <xs:enumeration value="open" />
+                            <xs:enumeration value="sharedkey" />
+                            <xs:enumeration value="auto" />
+                        </xs:restriction>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="defaultTransmitKeyIndex" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="wepKeyLength" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:restriction base="IntegerCap">
+                            <xs:enumeration value="64" />
+                            <xs:enumeration value="128" />
+                        </xs:restriction>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="EncryptionKeyList" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                        <xs:element name="encryptionKey" type="HexBinaryCap" />
+                    </xs:sequence>
+                    <xs:attributeGroup ref="Capabilities" />
+                </xs:complexType>
+            </xs:element>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="WifiSecurityWPAAlgo">
+        <xs:simpleContent>
+            <xs:restriction base="StringCap">
+                <xs:enumeration value="TKIP" />
+                <xs:enumeration value="AES" />
+                <xs:enumeration value="TKIP/AES" />
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="WifiSecurityWPA">
+        <xs:sequence>
+            <xs:element name="algorithmType" type="WifiSecurityWPAAlgo" minOccurs="1" maxOccurs="1" />
+            <xs:element name="sharedKey" type="StringCap" minOccurs="1" maxOccurs="1" />
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="WifiSecurity">
+        <xs:sequence>
+            <xs:element name="securityMode" type="WifiSecurityMode" minOccurs="0" maxOccurs="1" />
+            <xs:element name="WEP" type="WifiSecurityWEP" minOccurs="0" maxOccurs="1" />
+            <xs:element name="WPA" type="WifiSecurityWPA" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Extensions" type="WirelessSecurityExt" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="WirelessProfile">
+        <xs:sequence>
+            <xs:element name="channel" type="WifiChannel" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ssid" type="StringCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="wmmEnabled" type="BooleanCap" minOccurs="0" maxOccurs="1" />
+            <xs:element name="WirelessSecurity" type="WifiSecurity" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="Wireless" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="wirelessNetworkMode" type="wirelessNetworkMode" minOccurs="0" maxOccurs="1" />
+                <xs:element name="profile" type="WirelessProfile" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="statusRefreshInterval" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="AggressiveRoaming" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="testConnectivity" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                            <xs:element name="timeout" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                            <xs:element name="ResultNotifyURL" type="StringCap" minOccurs="0" maxOccurs="1" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Extensions" type="WirelessExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+
+    <!-- AvailableAccessPoint -->
+    <xs:element name="AvailableAccessPoint" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ssid" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="bssid" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="rssidB" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="securityMode" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:restriction base="StringCap">
+                                <xs:enumeration value="disable" />
+                                <xs:enumeration value="WEP" />
+                                <xs:enumeration value="WPA-personal" />
+                                <xs:enumeration value="WPA2-personal" />
+                                <xs:enumeration value="WPA-RADIUS" />
+                                <xs:enumeration value="WPA-enterprise" />
+                                <xs:enumeration value="WPA2-enterprise" />
+                            </xs:restriction>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Extensions" type="AvailableAccessPointExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+
+    <!-- WirelessNetworkStatus -->
+    <xs:complexType name="WirelessAvailableAP">
+        <xs:sequence>
+            <xs:element name="ssid" type="StringCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="bssid" type="StringCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="rssidB" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            <xs:element name="securityMode" type="WifiSecurityMode" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="WirelessAvailableAPList">
+        <xs:sequence>
+            <xs:element name="AvailableAccessPoint" type="WirelessAvailableAP" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="Extensions" type="AvailableAccessPointExt" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="version" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <xs:element name="WirelessNetworkStatus" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="channelNo" type="WifiChannel" minOccurs="1" maxOccurs="1" />
+                <xs:element name="ssid" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="bssid" type="StringCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="rssidB" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="signalStrength" type="PercentageCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="noiseIndB" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="numOfAPs" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="AvailableAPList" type="WirelessAvailableAPList" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="WirelessNetworkStatusExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- XMPPGateway -->
+    <xs:element name="XMPPGateway" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="hostName" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="ipAddress" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="ipv6Address" type="StringCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="portNo" type="IntegerCap" minOccurs="0" maxOccurs="1" />
+                <xs:element name="Extensions" type="XMPPGatewayExt" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Camera Video Recording (CVR) -->
+    <xs:element name="cvrList" >
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="cvr" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attributeGroup ref="Capabilities" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="cvr">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+		<!-- The total number of Kilo Bytes to allow this recording session to use. -->
+                <xs:element name="storageSizeKB" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+		<!-- The streaming channel ID the recording session should record from. -->
+                <xs:element name="streamingChannelID" type="IdCap" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="cvrRecordEntryList">
+	<xs:sequence>
+	    <xs:element name="record" type="cvrRecordEntry" minOccurs="0" maxOccurs="unbounded"/>
+	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="cvrRecordEntry">
+        <xs:sequence>
+	        <!-- Time (UTC) the current section of video started recording in the timeline. --> 
+                <xs:element name="time" type="DateTimeCap" minOccurs="1" maxOccurs="1" />
+		<!-- The number of milliseconds this section has been recording. -->
+                <xs:element name="durationMs" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+		<!-- This section is currently recording. -->
+                <xs:element name="active" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="cvrStatus">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="IdCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="enabled" type="BooleanCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="storageSizeKB" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+		<xs:element name="recordedList" type="cvrRecordEntryList" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="cvrCapabilities">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="storageSizeKB" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+                <xs:element name="simultaneousRecording" type="IntegerCap" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
